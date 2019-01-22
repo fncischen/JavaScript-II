@@ -1,6 +1,21 @@
 // ==== Challenge 1: Write your own closure ====
 // Write a simple closure of your own creation.  Keep it simple!
 
+function eat(food) {
+  if(food == "cake"){
+    return function(){
+      return "eat salad tomorrow";
+    }
+  }
+  else if (food == "soup") {
+    return function() {
+      return "eat meat tomorrow";
+    }
+  }
+}
+
+console.log(eat("cake"));
+console.log(eat("soup"));
 
 // ==== Challenge 2: Create a counter function ====
 const counter = () => {
