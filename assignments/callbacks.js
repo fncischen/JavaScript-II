@@ -10,6 +10,8 @@ const items = ['Pencil', 'Notebook', 'yo-yo', 'Gum'];
     // firstItem passes the first item of the given array to the callback function.
   }
 
+  // test
+
   // Potential Solution:
   function firstItem(arr, cb) {
     return cb(arr[0]);
