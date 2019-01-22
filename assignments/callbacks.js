@@ -26,24 +26,42 @@ const items = ['Pencil', 'Notebook', 'yo-yo', 'Gum'];
 
 function getLength(arr, cb) {
   // getLength passes the length of the array into the callback.
+  let len = arr.length;
+  return cb(len);
 }
 
 function last(arr, cb) {
+  let lastItem = arr[arr.length-1];
+  return cb(lastItem);
   // last passes the last item of the array into the callback.
 }
 
 function sumNums(x, y, cb) {
   // sumNums adds two numbers (x, y) and passes the result to the callback.
+  let sum = x + y;
+  return cb(sum);
 }
 
 function multiplyNums(x, y, cb) {
   // multiplyNums multiplies two numbers and passes the result to the callback.
+  let z = x * y;
+  return cb(z);
 }
 
 function contains(item, list, cb) {
   // contains checks if an item is present inside of the given array/list.
   // Pass true to the callback if it is, otherwise pass false.
+  let bool = false;
+  
+  list.foreach(function(element) {
+    if(element == item) {
+      bool = true;
+      break; 
+    }
+  });
+    cb(bool);
 }
+
 
 /* STRETCH PROBLEM */
 
