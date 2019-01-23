@@ -10,6 +10,8 @@ const items = ['Pencil', 'Notebook', 'yo-yo', 'Gum'];
     // firstItem passes the first item of the given array to the callback function.
   }
 
+  // test
+
   // Potential Solution:
   function firstItem(arr, cb) {
     return cb(arr[0]);
@@ -24,24 +26,65 @@ const items = ['Pencil', 'Notebook', 'yo-yo', 'Gum'];
 
 function getLength(arr, cb) {
   // getLength passes the length of the array into the callback.
+  let len = arr.length;
+  return cb(len);
 }
 
+// test
+
+getLength(items, function(length) {
+  console.log(length);
+});
+
 function last(arr, cb) {
+  let lastItem = arr[arr.length-1];
+  return cb(lastItem);
   // last passes the last item of the array into the callback.
 }
 
+last(items,function(lastItem) {
+  console.log(lastItem);
+});
+
 function sumNums(x, y, cb) {
   // sumNums adds two numbers (x, y) and passes the result to the callback.
+  let sum = x + y;
+  return cb(sum);
 }
+
+sumNums(5,7,function(sum) {
+  console.log(sum);
+});
+
 
 function multiplyNums(x, y, cb) {
   // multiplyNums multiplies two numbers and passes the result to the callback.
+  let z = x * y;
+  return cb(z);
 }
+
+multiplyNums(2,3, function(multiple){
+  console.log(multiple);
+})
 
 function contains(item, list, cb) {
   // contains checks if an item is present inside of the given array/list.
   // Pass true to the callback if it is, otherwise pass false.
+  let bool = false;
+
+  list.foreach(function(element) {
+    if(element == item) {
+      bool = true;
+      return cb(bool); 
+    }
+  });
+
+    cb(bool);
+
 }
+
+contains('Notebook',items,function(bool){console.log(bool)});
+
 
 /* STRETCH PROBLEM */
 
